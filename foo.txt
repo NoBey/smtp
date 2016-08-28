@@ -1,1 +1,48 @@
-23233223sdfsdf
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+	t=1472411128; bh=bVyKw81L2QRao5TbvNFJGoEsBEVRqrdMSEBk/W60dWc=;
+	h=From:To:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:Date:Message-ID;
+	b=CA8NbX1rbZFi+u1SiATqGIq5xuCUvx3gY/cU9pZHEpxQPQWvQZvb2RncrP8HyyfFj
+	 c42G0/1VYSOhx/daknnKnJm3u7/TqBJEgPNm5y/JaYs6P9ctcgmwjoUANxD+hREbt6
+	 V7voR5NBMwTcnX0YF0KOdL9Fn2efxbaoZ+gptGMY=
+X-QQ-FEAT: JIAKDmcNCRVVAuYfekOlYVCjpkfKqSAqmcFlL73lNkc8H310Jq429/CudLT1t
+	px9fezLW6Rk5/ZrHVgR4p64WVWwgBJvID3th0+1pl7plwC+X+qCnhyv5ig31nOgK7FSTgMk
+	NS9AKUKQnru1YYo/oW+/vryO6cf1dx2hH6x7gIMT8ZzrgX6bjkIW2xDbxllwIMi4iVX+whp
+	dNATM80d9tntNPIrPPr4vuOMywmdFES8q7lPPhH3nDg==
+X-QQ-SSF: 00010000000000F000000000000000F
+X-HAS-ATTACH: no
+X-QQ-BUSINESS-ORIGIN: 2
+X-Originating-IP: 61.53.151.158
+X-QQ-STYLE:
+X-QQ-mid: webmail136t1472411127t840835
+From: "=?ISO-8859-1?B?Tm9CZXk=?=" <786964300@qq.com>
+To: "=?ISO-8859-1?B?bm9iZXk=?=" <nobey@nobey.cn>
+Subject: 1111
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_57C335F7_0B97AEB0_5A832E5F"
+Content-Transfer-Encoding: 8Bit
+Date: Mon, 29 Aug 2016 03:05:27 +0800
+X-Priority: 3
+Message-ID: <tencent_25A9E4740D8614BA4A2BF7D7@qq.com>
+X-QQ-MIME: TCMime 1.0 by Tencent
+X-Mailer: QQMail 2.x
+X-QQ-Mailer: QQMail 2.x
+X-QQ-SENDSIZE: 520
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_57C335F7_0B97AEB0_5A832E5F
+Content-Type: text/plain;
+	charset="ISO-8859-1"
+Content-Transfer-Encoding: base64
+
+MjIy
+
+------=_NextPart_57C335F7_0B97AEB0_5A832E5F
+Content-Type: text/html;
+	charset="ISO-8859-1"
+Content-Transfer-Encoding: base64
+
+PGRpdj4yMjI8L2Rpdj4=
+
+------=_NextPart_57C335F7_0B97AEB0_5A832E5F--

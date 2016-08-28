@@ -6,7 +6,7 @@ var transporter = nodemailer.createTransport('smtp://mx1.qq.com');
 // setup e-mail data with unicode symbols
 var mailOptions = {
     from: 'nobey@nobey.cn', // sender address
-    to: '786964300@163.com', // list of receivers
+    to: '786964300@qq.com', // list of receivers
     subject: 'Hello', // Subject line
     text: 'Hello world', // plaintext body
     html: '<b>Hello world</b>' // html body

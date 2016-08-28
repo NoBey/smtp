@@ -1,13 +1,15 @@
 var smtp = require('smtp-protocol');
 var fs = require('fs');
 
-smtp.connect('localhost', 9025, function (mail) {
-    mail.helo('example.com');
-    mail.from('substack@example.com');
-    mail.to('root@example.com');
+smtp.connect('mx1.qq.com', 25, function (mail) {
+    console.log('kaishi')
+    mail.helo('okokok.cn');
+    mail.from('substack@okokok.cn');
+    mail.to('786964300@qq.com');
     mail.data();
-    fs.createReadStream('./foo.txt').pipe(mail.message());
+    // mail.message('ss')
+    // fs.createReadStream('./foo.txt').pipe(mail.message());
     mail.quit();
     console.log('ok')
-    
+
 });
