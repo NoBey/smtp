@@ -9,12 +9,10 @@ var server = smtp.createServer({
   });
 
   req.on('from', function(to, ack) {
-    console.log(to)
     ack.accept();
   });
 
   req.on('to', function(to, ack) {
-    console.log(to)
     var domain = to.split('@')[1] || 'localhost';
     if (domain === 'localhost') ack.accept()
     else ack.reject()
