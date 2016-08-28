@@ -1,5 +1,8 @@
 var smtp = require('smtp-protocol');
 var mailparser = require("mailparser").MailParser;
+
+var Domain = 'nobey.cn'
+
 var server = smtp.createServer({
   domain: 'nobey.cn'
 }, function(req) {
@@ -13,8 +16,8 @@ var server = smtp.createServer({
   });
 
   req.on('to', function(to, ack) {
-    var domain = to.split('@')[1] || 'nobey.cn';
-    if (domain === 'localhost')  ack.accept()
+    var domain = to.split('@')[1] || Domain;
+    if (domain === Domain)  ack.accept()
     else ack.reject()
   });
 
