@@ -3,6 +3,7 @@ var mailparser = require("mailparser").MailParser;
 var server = smtp.createServer({
   domain: 'nobey.cn'
 }, function(req) {
+console.log(req)
 
   req.on('greeting', function(to, ack) {
     ack.accept();
