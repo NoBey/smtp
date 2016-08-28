@@ -13,8 +13,7 @@ var server = smtp.createServer({
   });
 
   req.on('to', function(to, ack) {
-    console.log(to)
-    var domain = to.split('@')[1] || 'localhost';
+    var domain = to.split('@')[1] || 'nobey.cn';
     if (domain === 'localhost')  ack.accept()
     else ack.reject()
   });
