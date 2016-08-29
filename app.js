@@ -1,5 +1,6 @@
 var smtp = require('smtp-protocol');
-var mailparser = require("mailparser").MailParser;
+var MailParser = require("mailparser").MailParser;
+var mailparser = new MailParser();
 
 var Domain = 'nobey.cn'
 
@@ -24,8 +25,9 @@ var server = smtp.createServer({
   req.on('message', function(stream, ack) {
 
 stream.pipe(mailparser);
+
  mailparser.on("end", function(mail_object){
-  console.log(mail_object);//这里就是解析好的mail格式
+  console.log(mail_object); //这里就是解析好的mail格式
  })
     ack.accept();
   });
