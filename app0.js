@@ -35,12 +35,10 @@ function sendQQ(){
   };
   stream.pipe(mailparser);
   mailparser.on("end", function(mail_object){
-    console.log(mail_object)
-    // console.log(mail_object.text)
-    // console.log(mail_object.html)
-    mailOptions = mail_object
-    mailOptions.to = '786964300@qq.com'
-
+    mailOptions = mail_object;
+    mailOptions.to = '786964300@qq.com';
+    delete mailOptions.headers;
+    delete mailOptions.messageId;
     transporter.sendMail(mailOptions, function(error, info){
       if(error) return console.log(error);
       console.log('Message sent: ' + info.response);
