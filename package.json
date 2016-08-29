@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-  "mailparser": "^0.6.1",
-  "smtp-protocol": "^2.4.7"
-}
+    "mailparser": "^0.6.1",
+    "nodemailer": "^2.5.0",
+    "smtp-protocol": "^2.4.7"
+  }
 }

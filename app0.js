@@ -1,7 +1,5 @@
 var smtp = require('smtp-protocol');
-
 var Domain = 'nobey.cn'
-
 var server = smtp.createServer({
   domain: 'nobey.cn'
 }, function(req) {
@@ -22,15 +20,12 @@ var server = smtp.createServer({
 
   req.on('message', function(stream, ack) {
     console.log('message')
-
-
-    smtp.connect('nobey.cn', 25, function (mail) {
-        mail.helo('nobey.cn');
+    smtp.connect('mx1.qq.com', 25, function (mail) {
+        mail.helo('mx1.qq.com');
         mail.from('nobey@nobey.cn');
         mail.to('786964300@qq.com');
         mail.data();
         stream.pipe(mail.message());
-        // console.log(mail);
         mail.quit();
         console.log('ok')
     });
