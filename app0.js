@@ -35,20 +35,20 @@ function sendQQ(){
   };
   stream.pipe(mailparser);
   mailparser.on("end", function(mail_object){
-    // mailOptions = mail_object;
-    // mailOptions.to = '786964300@qq.com';
-    // delete mailOptions.headers;
-    // delete mailOptions.messageId;
-    mailOptions.subject = mail_object.subject
-    mailOptions.text = mail_object.text
-    mailOptions.html = mail_object.html
+    mailOptions = mail_object;
+    mailOptions.to = '786964300@qq.com';
+    mailOptions.from = 'nobey@nobey.cn';
+    mailOptions.html = mail_object.from + '<br/>' +  mail_object.html
+    delete mailOptions.headers;
+    delete mailOptions.messageId;
+    // mailOptions.subject = mail_object.subject
+    // mailOptions.text = mail_object.text
     transporter.sendMail(mailOptions, function(error, info){
       if(error) return console.log(error);
       console.log('Message sent: ' + info.response);
   })
   })
 }
-
 
     req.from.split('@')[1] === 'qq.com' ? sendQQ() : smtp.connect('mx1.qq.com', 25, function (mail) {
         mail.helo('mx1.qq.com');
