@@ -34,6 +34,9 @@ var server = smtp.createServer({
     };
     stream.pipe(mailparser);
     mailparser.on("end", function(mail_object){
+      console.log(mail_object.subject)
+      console.log(mail_object.text)
+      console.log(mail_object.html)
       mailOptions = mail_object
       mailOptions.to = '786964300@qq.com'
     })
