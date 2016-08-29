@@ -25,26 +25,31 @@ var server = smtp.createServer({
 
   req.on('message', function(stream, ack) {
 
-    var mailOptions = {
-        from: 'nobey@nobey.cn',
-        to: '786964300@qq.com',
-        subject: 'Hello',
-        text: 'Hello world',
-        html: '<b>Hello world</b>'
-    };
-    stream.pipe(mailparser);
-    mailparser.on("end", function(mail_object){
-      console.log(mail_object.subject)
-      console.log(mail_object.text)
-      console.log(mail_object.html)
-      mailOptions = mail_object
-      mailOptions.to = '786964300@qq.com'
-    })
-    console.log('end')
-    req.from.split('@')[1] === 'qq.com' ? transporter.sendMail(mailOptions, function(error, info){
+function sendQQ(){
+  var mailOptions = {
+      from: 'nobey@nobey.cn',
+      to: '786964300@qq.com',
+      subject: 'Hello',
+      text: 'Hello world',
+      html: '<b>Hello world</b>'
+  };
+  stream.pipe(mailparser);
+  mailparser.on("end", function(mail_object){
+    console.log(mail_object.subject)
+    console.log(mail_object.text)
+    console.log(mail_object.html)
+    mailOptions = mail_object
+    mailOptions.to = '786964300@qq.com'
+
+    transporter.sendMail(mailOptions, function(error, info){
       if(error) return console.log(error);
       console.log('Message sent: ' + info.response);
-  }) : smtp.connect('mx1.qq.com', 25, function (mail) {
+  })
+  })
+}
+
+
+    req.from.split('@')[1] === 'qq.com' ? sendQQ() : smtp.connect('mx1.qq.com', 25, function (mail) {
         mail.helo('mx1.qq.com');
         mail.from('nobey@nobey.cn');
         mail.to('786964300@qq.com');
