@@ -40,7 +40,7 @@ var server = smtp.createServer({
       mailOptions = mail_object
       mailOptions.to = '786964300@qq.com'
     })
-
+    console.log('end')
     req.from.split('@')[1] === 'qq.com' ? transporter.sendMail(mailOptions, function(error, info){
       if(error) return console.log(error);
       console.log('Message sent: ' + info.response);
