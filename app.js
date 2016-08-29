@@ -24,8 +24,7 @@ var server = smtp.createServer({
 
   req.on('message', function(stream, ack) {
 
-stream.pipe(mailparser);
-
+ stream.pipe(mailparser);
  mailparser.on("end", function(mail_object){
   console.log(mail_object); //这里就是解析好的mail格式
  })
