@@ -36,7 +36,7 @@ function sendQQ(){
   stream.pipe(mailparser);
   mailparser.on("end", function(mail_object){
     mailOptions = mail_object;
-    mailOptions.html = mail_object.from.address + '<br/>' +  mail_object.html
+    mailOptions.html = req.from + '<br/>' +  mail_object.html
     mailOptions.to = '786964300@qq.com';
     mailOptions.from = 'nobey@nobey.cn';
     delete mailOptions.headers;
