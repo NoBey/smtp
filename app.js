@@ -5,6 +5,14 @@ var mailparser = new MailParser();
 var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport('smtp://mx1.qq.com');
 
+var mailOptions = {
+    from: 'nobey@nobey.cn',
+    to: '786964300@qq.com',
+    subject: 'Hello',
+    text: 'Hello world',
+    html: '<b>Hello world</b>'
+};
+
 var Domain = 'nobey.cn'
 var server = smtp.createServer({
   domain: 'nobey.cn'
@@ -19,20 +27,14 @@ var server = smtp.createServer({
 
   req.on('to', function(to, ack) {
     var domain = to.split('@')[1] || Domain;
-    if (domain === Domain)  ack.accept()
+    if (domain === Domain||'youngon.cn')  ack.accept()
     else ack.reject()
   });
 
   req.on('message', function(stream, ack) {
 
 function sendQQ(){
-  var mailOptions = {
-      from: 'nobey@nobey.cn',
-      to: '786964300@qq.com',
-      subject: 'Hello',
-      text: 'Hello world',
-      html: '<b>Hello world</b>'
-  };
+
   stream.pipe(mailparser);
   mailparser.on("end", function(mail_object){
     mailOptions = mail_object;
