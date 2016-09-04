@@ -23,9 +23,11 @@ var server = smtp.createServer({
 
   req.on('from', function(to, ack) {
     ack.accept();
+
   });
 
   req.on('to', function(to, ack) {
+    console.log(req.from+'-->'+to);
     var domain = to.split('@')[1] || Domain;
     if (domain === Domain||'youngon.cn')  ack.accept()
     else ack.reject()
