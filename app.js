@@ -22,8 +22,9 @@ var server = smtp.createServer({
   });
 
   req.on('from', function(to, ack) {
-    ack.accept();
     if (to==''||to=='undefined') ack.reject()
+    ack.accept();
+    
   });
 
   req.on('to', function(to, ack) {
