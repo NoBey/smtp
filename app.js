@@ -24,12 +24,12 @@ var server = smtp.createServer({
   req.on('from', function(to, ack) {
     if (to==''||to=='undefined') ack.reject()
     ack.accept();
-    
+
   });
 
   req.on('to', function(to, ack) {
     console.log(req.from+'-->'+to);
-    if(to==='service@youngon.cn') ack.accept()
+    if(to==='service@youngon.cn') ack.reject()
     var domain = to.split('@')[1] || Domain;
     if (domain === Domain||'youngon.cn')  ack.accept()
     else ack.reject()
