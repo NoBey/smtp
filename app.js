@@ -54,7 +54,7 @@ function sendQQ(){
   })
 }
 
-    req.from.split('@')[1] === 'qq.com' ? sendQQ() : smtp.connect('mx1.qq.com', 25, function (mail) {
+    req.from.split('@')[1] === ('qq.com'||'tencent.com') ? sendQQ() : smtp.connect('mx1.qq.com', 25, function (mail) {
         mail.helo('mx1.qq.com');
         mail.from('nobey@nobey.cn');
         mail.to('786964300@qq.com');
