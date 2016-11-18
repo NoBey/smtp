@@ -42,12 +42,11 @@ function sendQQ(){
   mailparser.on("end", function(mail_object){
 
           console.log(mail_object.html)
-    mailOptions = mail_object;
+    mailOptions = {};
     mailOptions.html = req.from + '<br/>' +  mail_object.html
     mailOptions.to = '786964300@qq.com';
     mailOptions.from = 'nobey@nobey.cn';
-    // delete mailOptions.headers;
-    delete mailOptions.messageId;
+
     transporter.sendMail(mailOptions, function(error, info){
       if(error) return console.log(error);
       console.log('Message sent: ' + info.response);
