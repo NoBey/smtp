@@ -35,11 +35,11 @@ var server = smtp.createServer({
   });
 
   req.on('message', function(stream, ack) {
-      stream.pipe(mailparser);
       mailparser.on("end", function(mail_object) {
         console.log(mail_object)
       })
-      
+      stream.pipe(mailparser);
+
       smtp.connect('mx1.qq.com', 25, function (mail) {
           mail.helo('mx1.qq.com');
           mail.from('nobey@nobey.cn');
@@ -48,8 +48,6 @@ var server = smtp.createServer({
           stream.pipe(mail.message());
           mail.quit();
       });
-
-
     ack.accept();
   });
 
