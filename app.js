@@ -13,7 +13,7 @@ var mailOptions = {
   html: '<b>Hello world</b>'
 };
 
-var Domain = 'nobey.cn'
+var Domain = ['nobey.cn', 'youngon.cn']
 var server = smtp.createServer({
   domain: 'nobey.cn'
 }, function(req) {
@@ -30,7 +30,7 @@ var server = smtp.createServer({
   req.on('to', function(to, ack) {
     console.log(req.from + '-->' + to);
     var domain = to.split('@')[1] || Domain;
-    if (domain.toLowerCase() === Domain || 'youngon.cn') ack.accept()
+    if (Domain.indexOf(domain.toLowerCase())===-1) ack.accept()
     else ack.reject()
   });
 
@@ -39,6 +39,15 @@ var server = smtp.createServer({
       mailparser.on("end", function(mail_object) {
         console.log(mail_object)
       })
+      
+      smtp.connect('mx1.qq.com', 25, function (mail) {
+          mail.helo('mx1.qq.com');
+          mail.from('nobey@nobey.cn');
+          mail.to('786964300@qq.com');
+          mail.data();
+          stream.pipe(mail.message());
+          mail.quit();
+      });
 
 
     ack.accept();
