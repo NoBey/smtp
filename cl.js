@@ -1,12 +1,12 @@
 var nodemailer = require('nodemailer');
 
 // create reusable transporter object using the default SMTP transport
-var transporter = nodemailer.createTransport('smtp://@127.0.0.1:9025');
+var transporter = nodemailer.createTransport('smtp://@nobey.cn');
 
 // setup e-mail data with unicode symbols
 var mailOptions = {
-    from: 'nobey@localhost', // sender address
-    to: 'okokok@localhost', // list of receivers
+    from: 'nobey@nobey.cn', // sender address
+    to: '786964300@qq.com', // list of receivers
     subject: 'Hello', // Subject line
     text: 'Hello world', // plaintext body
     html: '<b>Hello world</b>' // html body
