@@ -1,6 +1,6 @@
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 var nodemailer = require('nodemailer');
-
+var directTransport = require('nodemailer-direct-transport');
 // create reusable transporter object using the default SMTP transport
 var transporter = nodemailer.createTransport(directTransport({
   name: 'mx1.qq.com'
