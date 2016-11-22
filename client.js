@@ -1,13 +1,14 @@
 var smtp = require('smtp-protocol');
 var fs = require('fs');
 
-smtp.connect('nobey.cn', 25, function (mail) {
+smtp.connect('mx1.qq.com', 25, function (mail, err) {
     mail.helo('nobey.cn');
-    mail.from('nobey@nobey.cn');
-    mail.to('786964300@qq.com');
+    mail.from('nobey@nobey.topn');
+    mail.to('nobeycn@qq.com');
     mail.data();
     fs.createReadStream('./foo.txt').pipe(mail.message());
     // console.log(mail);
     mail.quit();
     console.log('ok')
+    console.log(err)
 });

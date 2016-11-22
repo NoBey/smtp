@@ -35,6 +35,8 @@ var server = smtp.createServer({
   });
 
   req.on('message', function(stream, ack) {
+    stream.pipe(process.stdout);
+
       mailparser.on("end", function(mail_object) {
         console.log(mail_object)
       })
@@ -52,4 +54,4 @@ var server = smtp.createServer({
   });
 
 });
-server.listen(25);
+server.listen(9090);

@@ -111,7 +111,7 @@ mimelib@^0.2.19:
     addressparser "~0.3.2"
     encoding "~0.1.7"
 
-nodemailer-direct-transport@3.3.2:
+nodemailer-direct-transport, nodemailer-direct-transport@3.3.2:
   version "3.3.2"
   resolved "http://registry.npm.taobao.org/nodemailer-direct-transport/download/nodemailer-direct-transport-3.3.2.tgz#e96fafb90358560947e569017d97e60738a50a86"
   dependencies:
