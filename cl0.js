@@ -4,7 +4,7 @@ var directTransport = require('nodemailer-direct-transport');
 // create reusable transporter object using the default SMTP transport
 var transporter = nodemailer.createTransport(directTransport({
   name: 'mx1.qq.com'
-}));
+}))
 
 // setup e-mail data with unicode symbols
 var mailOptions = {

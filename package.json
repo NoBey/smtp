@@ -12,6 +12,7 @@
     "mailparser": "^0.6.1",
     "nodemailer": "^2.5.0",
     "nodemailer-direct-transport": "^3.3.2",
+    "pop3-n3": "^0.1.2",
     "smtp-protocol": "^2.4.7"
   }
 }

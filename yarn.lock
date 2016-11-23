@@ -56,6 +56,12 @@ iconv-lite@0.4.13:
   version "0.4.13"
   resolved "http://registry.npm.taobao.org/iconv-lite/download/iconv-lite-0.4.13.tgz#1f88aba4ab0b1508e8312acc39345f36e992e2f2"
 
+iconv@*:
+  version "2.2.1"
+  resolved "http://registry.npm.taobao.org/iconv/download/iconv-2.2.1.tgz#39b13fdd98987d26aef26c0a2f2a900911fa4584"
+  dependencies:
+    nan "^2.3.5"
+
 inherits@~2.0.1:
   version "2.0.3"
   resolved "http://registry.npm.taobao.org/inherits/download/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
@@ -111,6 +117,14 @@ mimelib@^0.2.19:
     addressparser "~0.3.2"
     encoding "~0.1.7"
 
+nan@^2.3.5:
+  version "2.4.0"
+  resolved "http://registry.npm.taobao.org/nan/download/nan-2.4.0.tgz#fb3c59d45fe4effe215f0b890f8adf6eb32d2232"
+
+node-markdown@*:
+  version "0.1.1"
+  resolved "http://registry.npm.taobao.org/node-markdown/download/node-markdown-0.1.1.tgz#e365baba38d4ac56d8563dd69ca6d7215b08fb94"
+
 nodemailer-direct-transport, nodemailer-direct-transport@3.3.2:
   version "3.3.2"
   resolved "http://registry.npm.taobao.org/nodemailer-direct-transport/download/nodemailer-direct-transport-3.3.2.tgz#e96fafb90358560947e569017d97e60738a50a86"
@@ -159,6 +173,13 @@ nodemailer@^2.5.0:
     nodemailer-smtp-pool "2.8.2"
     nodemailer-smtp-transport "2.7.2"
     socks "1.1.9"
+
+pop3-n3:
+  version "0.1.2"
+  resolved "http://registry.npm.taobao.org/pop3-n3/download/pop3-n3-0.1.2.tgz#3fe17f52b2fb717eefab80f2220b3d22588fad51"
+  dependencies:
+    iconv "*"
+    node-markdown "*"
 
 "readable-stream@>=1.1.13-1 <1.2.0-0":
   version "1.1.14"

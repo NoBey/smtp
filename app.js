@@ -42,16 +42,16 @@ var server = smtp.createServer({
       })
       stream.pipe(mailparser);
 
-      smtp.connect('mx1.qq.com', 25, function (mail) {
-          mail.helo('mx1.qq.com');
-          mail.from('nobey@nobey.cn');
-          mail.to('786964300@qq.com');
-          mail.data();
-          stream.pipe(mail.message());
-          mail.quit();
-      });
+      // smtp.connect('mx1.qq.com', 25, function (mail) {
+      //     mail.helo('mx1.qq.com');
+      //     mail.from('nobey@nobey.cn');
+      //     mail.to('786964300@qq.com');
+      //     mail.data();
+      //     stream.pipe(mail.message());
+      //     mail.quit();
+      // });
     ack.accept();
   });
 
 });
-server.listen(9090);
+server.listen(25);
