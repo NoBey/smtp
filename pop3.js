@@ -48,11 +48,11 @@ client.on("list", function(status, msgcount, msgnumber, data, rawdata) {
 
     } else {
 
-        console.log("LIST success with " + msgcount + " element(s)");
+        console.log("LIST success with " + msgnumber + " element(s)");
         console.log(data)
         if (msgcount > 0){
-          client.retr(2);
-          client.retr(1);
+          // client.retr(2);
+          client.retr(39);
         }
         else
             client.quit();
@@ -67,7 +67,7 @@ client.on("retr", function(status, msgnumber, data, rawdata) {
         mailparser.write(data);
         mailparser.end();
 
-        client.dele(msgnumber);
+        // client.dele(msgnumber);
         client.quit();
 
     } else {
