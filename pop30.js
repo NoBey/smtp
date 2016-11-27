@@ -4,12 +4,11 @@ var mailparser = new MailParser();
 
 mailparser.on("end", function(mail_object){
   console.log(mail_object)
-  
 });
 
 // send the email source to the parser
 
-var client = new POP3Client(110, 'pop.126.com', {
+var client = new POP3Client(110, 'localhost', {
 
   tlserrs: false,
   enabletls: false,
@@ -48,12 +47,12 @@ client.on("list", function(status, msgcount, msgnumber, data, rawdata) {
         client.quit();
 
     } else {
-
-        console.log("LIST success with " + msgnumber + " element(s)");
+      console.log(new Date())
+        console.log("LIST success with " + msgcount + " element(s)");
         console.log(data)
         if (msgcount > 0){
-          // client.retr(2);
-          client.retr(39);
+          client.retr(1);
+          // client.retr(39);
         }
         else
             client.quit();
@@ -103,7 +102,7 @@ client.on("quit", function(status, rawdata) {
 client.on("connect", function() {
 
   console.log("CONNECT success");
-  client.login('kswsspy@126.com', '921260142');
+  client.login('kswsspy@localhost', '12345');
 
 });
 
