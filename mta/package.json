@@ -1,0 +1,15 @@
+{
+  "name": "zone-mta",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Zone-MTA application",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "zone-mta run -d . -c config.json"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "leveldown": "^1.5.0",
+    "zone-mta": "0.1.0-alpha.139"
+  }
+}

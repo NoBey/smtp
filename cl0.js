@@ -2,14 +2,13 @@
 var nodemailer = require('nodemailer');
 var directTransport = require('nodemailer-direct-transport');
 // create reusable transporter object using the default SMTP transport
-var transporter = nodemailer.createTransport(directTransport({
-  name: 'mx1.qq.com'
-}))
+// var transporter = nodemailer.createTransport('smtp://115.159.217.96:25')
+var transporter = nodemailer.createTransport('smtp://127.0.0.1:2525')
 
 // setup e-mail data with unicode symbols
 var mailOptions = {
     from: 'nobey@nobey.cn', // sender address
-    to: 'nobeycn@qq.com', // list of receivers
+    to: 'nobeycn@nobey.cn', // list of receivers
     subject: 'Hello', // Subject line
     text: 'Hello world', // plaintext body
     html: '<b>Hello world</b>' // html body

@@ -8,7 +8,7 @@ mailparser.on("end", function(mail_object) {
 
 // send the email source to the parser
 
-var client = new POP3Client(110, 'localhost', {
+var client = new POP3Client(110, 'nobey.cn', {
 
   tlserrs: false,
   enabletls: false,

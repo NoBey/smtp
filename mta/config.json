@@ -1,0 +1,55 @@
+{
+  "name": "Zone-MTA",
+  "log": {
+    "syslog": false,
+    "level": "info"
+  },
+  "queue": {
+    "db": "./data/queue",
+    "backend": "leveldown",
+    "leveldown": {}
+  },
+  "smtpInterfaces": {
+    "feeder": {
+      "enabled": true,
+      "processes": 1,
+      "port": 2525
+    }
+  },
+  "pools": {
+    "default": [
+      {
+        "address": "0.0.0.0",
+        "name": "NoMac.local"
+      },
+      {
+        "address": "::",
+        "name": "NoMac.local"
+      }
+    ]
+  },
+  "zones": {
+    "default": {
+      "processes": 1,
+      "connections": 10,
+      "pool": "default"
+    }
+  },
+  "pluginsPath": "./plugins",
+  "plugins": {
+    "core/default-headers": {
+      "enabled": [
+        "receiver",
+        "main",
+        "sender"
+      ],
+      "addMissing": [
+        "message-id",
+        "date"
+      ],
+      "futureDate": false,
+      "xOriginatingIP": true
+    },
+    "example": false
+  }
+}
