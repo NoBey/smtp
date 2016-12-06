@@ -10,9 +10,9 @@ mailparser.on("end", function(mail_object) {
 
 var client = new POP3Client(110, 'localhost', {
 
-  tlserrs: false,
+  tlserrs: true,
   enabletls: false,
-  debug: false
+  debug: true
 
 });
 
@@ -108,7 +108,7 @@ client.on("quit", function(status, rawdata) {
 client.on("connect", function() {
 
   console.log("CONNECT success");
-  client.login('kswsspy@localhost', '12345');
+  client.auth("CRAM-MD5",'kswsspy@localhost', '12345');
 
 });
 
