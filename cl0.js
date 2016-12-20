@@ -8,10 +8,10 @@ var transporter = nodemailer.createTransport('smtp://nobey.cn')
 // setup e-mail data with unicode symbols
 var mailOptions = {
     from: 'nobey@nobey.cn', // sender address
-    to: 'nobeycn@qq.com', // list of receivers
-    subject: 'Hello', // Subject line
-    text: 'Hello world', // plaintext body
-    html: '<b>Hello world</b>' // html body
+    to: 'nobeycn@gmail.com', // list of receivers
+    subject: '打开黄金时代好看', // Subject line
+    text: '师傅说的话就发烧快点好快', // plaintext body
+    html: '<b>收到反馈就是大家看健康</b>' // html body
     //  data:'dsdsds'
 };
 

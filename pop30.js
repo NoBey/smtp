@@ -108,7 +108,9 @@ client.on("quit", function(status, rawdata) {
 client.on("connect", function() {
 
   console.log("CONNECT success");
-  client.auth("CRAM-MD5",'kswsspy@localhost', '12345');
+    client.apop('nobey@localhost', '12345');
+    // client.login('nobey@localhost', '12345');
+
 
 });
 

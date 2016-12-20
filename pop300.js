@@ -108,7 +108,7 @@ client.on("quit", function(status, rawdata) {
 client.on("connect", function() {
 
   console.log("CONNECT success");
-  client.login('kswsspy@localhost', '12345');
+  client.login('nobey@nobey.cn', '12345');
 
 });
 
